@@ -4,7 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:dev": "ng serve --port 4200",
+    "start:host": "ng serve --host 0.0.0.0 --port 4201 --disable-host-check=true",
     "build": "ng build",
+    "gh:build": "ng build --configuration production --base-href './'",
+    "gh:publish": "ngh --dir=dist/fb779",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
