@@ -30,5 +30,6 @@ const MATERIAL_MODULES = [
 @NgModule({
   declarations: [],
   imports: [CommonModule, MATERIAL_MODULES],
+  exports: [MATERIAL_MODULES],
 })
 export class MaterialModule {}
