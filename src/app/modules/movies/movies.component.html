@@ -1,1 +1,11 @@
-<p>movies works!</p>
+<mat-card>
+  <mat-card-title>
+    <h2>Buscador de Peliculas</h2>
+  </mat-card-title>
+  <mat-card-subtitle>
+    <app-movie-search></app-movie-search>
+  </mat-card-subtitle>
+  <mat-card-content>
+    <app-movie-card *ngFor="let movie of listMovies"></app-movie-card>
+  </mat-card-content>
+</mat-card>
