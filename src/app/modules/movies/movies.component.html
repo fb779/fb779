@@ -1,11 +1,23 @@
 <mat-card>
   <mat-card-title>
-    <h2>Buscador de Peliculas</h2>
+    <h2>Movies Searching</h2>
   </mat-card-title>
   <mat-card-subtitle>
-    <app-movie-search></app-movie-search>
+    <app-movie-search
+      [search]="searchTerm$ | async"
+      (searchChange)="searchChange($event)"
+    >
+    </app-movie-search>
   </mat-card-subtitle>
   <mat-card-content>
-    <app-movie-card *ngFor="let movie of listMovies"></app-movie-card>
+    <app-movie-pagination
+      [length]="totalMovies$ | async"
+      [pageIndex]="actualPage$ | async"
+      (changePage)="changePageSize($event)"
+    >
+    </app-movie-pagination>
+
+    <app-movie-list *ngIf="listMovies$ | async as movies" [movies]="movies">
+    </app-movie-list>
   </mat-card-content>
 </mat-card>

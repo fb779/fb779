@@ -2,13 +2,5 @@
   .mat-card {
     min-width: 300px;
     text-align: center;
-
-    mat-card-content {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-    }
   }
 }
