@@ -1,0 +1,30 @@
+:host {
+  display: grid;
+  height: 100vh;
+  width: 100%;
+  place-items: center;
+
+  mat-card {
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    font-weight: 300;
+    min-width: 300px;
+    max-width: 500px;
+
+    mat-card-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 0.5rem 0;
+    }
+
+    mat-card-actions {
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .pointer {
+    cursor: pointer;
+  }
+}

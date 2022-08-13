@@ -1,0 +1,73 @@
+<mat-card class="">
+  <form [formGroup]="sigUpForm" (submit)="sigup()">
+    <mat-card-header>
+      <mat-card-title>Log-In</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          placeholder="Email"
+          type="email"
+          name="email"
+          formControlName="email"
+          email
+          required
+        />
+        <mat-error *ngIf="f['email'].touched && f['email'].errors">
+          <p *ngIf="f['email'].errors['required']">Email required</p>
+          <p *ngIf="f['email'].errors['email']">It is not a valid email</p>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          [type]="passHide ? 'password' : 'text'"
+          name="password"
+          formControlName="password"
+          required
+        />
+        <mat-icon class="pointer" matSuffix (click)="passHide = !passHide">{{
+          passHide ? "visibility" : "visibility_off"
+        }}</mat-icon>
+        <mat-hint align="end">
+          {{ f["password"].value.length }} / 6-20
+        </mat-hint>
+        <mat-error *ngIf="f['password'].touched && f['password'].errors">
+          <p *ngIf="f['password'].errors['required']">Password required</p>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label> Birthday </mat-label>
+        <input
+          matInput
+          [matDatepicker]="birthdayPicker"
+          [disabled]="true"
+          name="birthday"
+          formControlName="birthday"
+          [max]="maxDate"
+          [min]="minDate"
+          required
+        />
+
+        <mat-hint> MM/DD/YYYY </mat-hint>
+
+        <mat-hint align="end"> {{ age }} </mat-hint>
+
+        <mat-datepicker-toggle matSuffix [for]="birthdayPicker">
+        </mat-datepicker-toggle>
+
+        <mat-datepicker #birthdayPicker [disabled]="false"></mat-datepicker>
+      </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-raised-button type="warn" color="accent">Signup</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
