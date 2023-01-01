@@ -1,1 +1,15 @@
-<p>navbar-training works!</p>
+<mat-toolbar color="primary">
+  <section>
+    <button mat-icon-button class="sidenav-menu-icon" aria-label="Menu icon" (click)="sideNavToggle.emit()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a routerLink="/fit-app/training">
+      <span>Fit-App</span>
+    </a>
+  </section>
+
+  <section class="sidenav-menu">
+    <a routerLink="/fit-app/training"> <span> Training </span> </a>
+    <a routerLink="/fit-app/auth/"> <span> Log-out </span> </a>
+  </section>
+</mat-toolbar>

@@ -1,0 +1,48 @@
+:host {
+    mat-toolbar {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 64px;
+
+        section {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+                font-size: 1rem;
+                text-decoration: none;
+                color: white;
+                box-sizing: border-box;
+                margin: 0 0.5rem;
+                cursor: pointer;
+                // &:hover {
+                //     border: solid 0.2rem pink;
+                // }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 599px) {
+    :host {
+        section {
+            &.sidenav-menu {
+                display: none !important;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 600px) {
+    :host {
+        section {
+            .sidenav-menu-icon {
+                display: none !important;
+            }
+        }
+    }
+}

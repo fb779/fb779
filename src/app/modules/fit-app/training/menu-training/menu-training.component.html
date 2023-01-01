@@ -1,0 +1,30 @@
+<mat-nav-list>
+    <a
+        mat-list-item
+        routerLink="/fit-app/training"
+        (click)="sideNavToggle.emit()"
+    >
+        <mat-icon>fitness_center</mat-icon>
+        <span> Training </span>
+    </a>
+    <a
+        mat-list-item
+        routerLink="/fit-app/training/new"
+        (click)="sideNavToggle.emit()"
+    >
+        <mat-icon>fitness_center</mat-icon>
+        <span> New Training </span>
+    </a>
+    <a
+        mat-list-item
+        routerLink="/fit-app/training/current"
+        (click)="sideNavToggle.emit()"
+    >
+        <mat-icon>fitness_center</mat-icon>
+        <span> Current Training </span>
+    </a>
+    <a mat-list-item routerLink="/fit-app/auth/" (click)="sideNavToggle.emit()">
+        <mat-icon>input</mat-icon>
+        <span> Log-out </span>
+    </a>
+</mat-nav-list>

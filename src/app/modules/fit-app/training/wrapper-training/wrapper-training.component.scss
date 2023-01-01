@@ -1,0 +1,12 @@
+:host {
+    height: 100vh;
+
+    mat-sidenav-container {
+        min-width: 350px;
+        height: 100%;
+        overflow: scroll;
+        mat-sidenav {
+            min-width: 250px;
+        }
+    }
+}

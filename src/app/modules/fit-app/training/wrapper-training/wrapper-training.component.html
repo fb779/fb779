@@ -1,3 +1,29 @@
-<app-navbar-training></app-navbar-training>
+<mat-sidenav-container>
+  <mat-sidenav #sideNav mode="over" role="navigation">
+    <app-menu-training (sideNavToggle)="sideNav.toggle()">
+    </app-menu-training>
+  </mat-sidenav>
 
-<router-outlet></router-outlet>
+  <mat-sidenav-container>
+    <app-navbar-training (sideNavToggle)="sideNav.toggle()">
+    </app-navbar-training>
+    <main>
+      <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+        <!-- <a mat-tab-link *ngFor="let link of links" (click)="activeLink = link" [active]="activeLink == link" > {{ link }} </a> -->
+        <a mat-tab-link routerLink="/fit-app/training/new" routerLinkActive="active">
+          New training
+        </a>
+        <a mat-tab-link routerLink="/fit-app/training/current">
+          Current training
+        </a>
+        <a mat-tab-link routerLink="/fit-app/training/trainings">
+          Pass training
+        </a>
+        <a mat-tab-link disabled>Disabled Link</a>
+      </nav>
+      <mat-tab-nav-panel #tabPanel>
+        <router-outlet></router-outlet>
+      </mat-tab-nav-panel>
+    </main>
+  </mat-sidenav-container>
+</mat-sidenav-container>
