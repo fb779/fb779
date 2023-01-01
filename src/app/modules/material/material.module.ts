@@ -8,12 +8,15 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatNativeDateModule } from '@angular/material/core';
 
@@ -25,12 +28,15 @@ const MATERIAL_MODULES = [
   MatDatepickerModule,
   MatDialogModule,
   MatDividerModule,
+  MatFormFieldModule,
   MatIconModule,
   MatInputModule,
-  MatFormFieldModule,
+  MatListModule,
   MatPaginatorModule,
+  MatSidenavModule,
   MatSortModule,
   MatTableModule,
+  MatTabsModule,
   MatToolbarModule,
   MatNativeDateModule,
 ];
