@@ -3,20 +3,15 @@
     <h2>Movies Searching</h2>
   </mat-card-title>
   <mat-card-subtitle>
-    <app-movie-search
-      [search]="searchTerm$ | async"
-      (searchChange)="searchChange($event)"
-    >
+    <app-movie-search [search]="searchTerm$ | async" (searchChange)="searchChange($event)">
     </app-movie-search>
   </mat-card-subtitle>
-  <mat-card-content>
-    <app-movie-pagination
-      [length]="totalMovies$ | async"
-      [pageIndex]="actualPage$ | async"
-      (changePage)="changePageSize($event)"
-    >
+  <mat-card-subtitle>
+    <app-movie-pagination [length]="totalMovies$ | async" [pageIndex]="actualPage$ | async"
+      (changePage)="changePageSize($event)">
     </app-movie-pagination>
-
+  </mat-card-subtitle>
+  <mat-card-content>
     <app-movie-list *ngIf="listMovies$ | async as movies" [movies]="movies">
     </app-movie-list>
   </mat-card-content>

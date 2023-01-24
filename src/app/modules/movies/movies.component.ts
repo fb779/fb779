@@ -4,7 +4,7 @@ import { NumberInput } from '@angular/cdk/coercion';
 import { PageEvent } from '@angular/material/paginator';
 
 import { MovieService } from '@movies/services/movie.service';
-import { Movie } from '@movies/models';
+import { Movie, Search } from '@movies/models';
 
 @Component({
   selector: 'app-movies',
@@ -12,7 +12,7 @@ import { Movie } from '@movies/models';
   styleUrls: ['./movies.component.scss'],
 })
 export class MoviesComponent implements OnInit {
-  listMovies$: Observable<Movie[]> = this.movieService.listMovies$;
+  listMovies$: Observable<Search[]> = this.movieService.listMovies$;
   searchTerm$: Observable<String> = this.movieService.searchTem$;
 
   totalMovies$: Observable<NumberInput> = this.movieService.totalMovies$;
