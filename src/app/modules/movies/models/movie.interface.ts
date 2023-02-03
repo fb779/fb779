@@ -13,12 +13,7 @@ export interface Search {
   Poster: String;
 }
 
-export interface Movie {
-  imdbID: String;
-  Title: String;
-  Year: String;
-  Type: Type;
-  Poster: String;
+export interface Movie extends Search {
   Rated: String;
   Released: String;
   Runtime: String;

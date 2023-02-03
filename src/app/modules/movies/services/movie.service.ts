@@ -78,4 +78,9 @@ export class MovieService {
 
     return `${API_URL_BASE}?apikey=${API_KEY}&page=${actualPage + 1}&s=${term}`;
   }
+
+  getMovieId(id: string): Observable<Movie> {
+    const url = `${API_URL_BASE}?apikey=${API_KEY}&i=${id}&plot=full`;
+    return this.http.get<Movie>(url);
+  }
 }
