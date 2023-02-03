@@ -1,12 +1,36 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title> {{ movie.Type | uppercase }} </mat-card-title>
-    <mat-card-subtitle> {{ movie.Year }} </mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image [src]="movie.Poster | noimagen" [alt]="movie.Title" />
-  <mat-card-content>
-    <p>
-      {{ movie.Title }}
-    </p>
-  </mat-card-content>
-</mat-card>
+<ng-container *ngIf="movie; else noMovieTemplae">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> {{ movie.Type | uppercase }} </mat-card-title>
+      <mat-card-subtitle> {{ movie.Year }} </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="movie.Poster | noimagen" [alt]="movie.Title" />
+    <mat-card-content>
+      <p>
+        {{ movie.Title }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-mini-fab color="primary" aria-label="Open Detail Information" (click)="openDialog(movie)">
+        <!-- <mat-icon>open_in_new</mat-icon> -->
+        <mat-icon>description</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+
+</ng-container>
+
+<ng-template #noMovieTemplae>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> No movie Data </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo dolore eveniet consectetur nam quis provident.
+        Dignissimos hic nisi molestiae in ducimus recusandae odio, rerum quia? Blanditiis, nihil. Eligendi, vero
+        voluptate.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

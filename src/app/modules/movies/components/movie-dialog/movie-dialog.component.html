@@ -1,0 +1,58 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ movie.Title }}</mat-card-title>
+
+    <mat-chip-list aria-label="Genre">
+      <mat-chip color="primary" selected *ngFor="let item of movie.Genre.split(',')">{{item}}</mat-chip>
+    </mat-chip-list>
+
+  </mat-card-header>
+  <mat-card-content>
+    <img [src]="movie.Poster | noimagen" alt="Photo of a Shiba Inu">
+    <!-- <div class="poster">
+    </div> -->
+    <section>
+      <article>
+        {{ movie.Plot }}
+      </article>
+
+      <article>
+        <p> Director </p>
+        <mat-chip color="accent" selected>{{movie.Director}}</mat-chip>
+      </article>
+      <article>
+        <p> Actors </p>
+        <mat-chip-list aria-label="Genre">
+          <mat-chip color="accent" *ngFor="let actor of movie.Actors.split(',')">{{actor}}</mat-chip>
+        </mat-chip-list>
+      </article>
+
+      <article>
+        <p> Languages </p>
+        <mat-chip-list aria-label="Genre">
+          <mat-chip color="primary" selected *ngFor="let language of movie.Language.split(',')"> {{language}}
+          </mat-chip>
+        </mat-chip-list>
+      </article>
+
+      <article>
+        <p> Rating </p>
+        <mat-chip-list aria-label="Genre">
+          <mat-chip color="warn" selected *ngFor="let rating of movie.Ratings">{{rating.Source}} -
+            {{ rating.Value }}</mat-chip>
+        </mat-chip-list>
+      </article>
+
+      <article>
+        <p> Director </p>
+        <mat-chip color="accent" selected>{{movie.Director}}</mat-chip>
+      </article>
+    </section>
+
+
+  </mat-card-content>
+  <!-- <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions> -->
+</mat-card>

@@ -11,6 +11,7 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 import { MovieSearchComponent } from './components/movie-search/movie-search.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { MoviePaginationComponent } from './components/movie-pagination/movie-pagination.component';
+import { MovieDialogComponent } from './components/movie-dialog/movie-dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MoviePaginationComponent } from './components/movie-pagination/movie-pa
     MovieListComponent,
     MoviePaginationComponent,
     NoImagenPipe,
+    MovieDialogComponent,
   ],
   imports: [
     CommonModule,
