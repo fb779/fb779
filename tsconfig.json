@@ -23,7 +23,8 @@
       "@environments/*": ["src/environments/*"],
       "@app/*": ["src/app/*"],
       "@material/*": ["src/app/modules/material/*"],
-      "@movies/*": ["src/app/modules/movies/*"]
+      "@movies/*": ["src/app/modules/movies/*"],
+      "@heroes/*": ["src/app/modules/heroes/*"]
     }
   },
   "angularCompilerOptions": {
