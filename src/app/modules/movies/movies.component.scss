@@ -1,0 +1,12 @@
+:host {
+  height: 100vh;
+  overflow: hidden;
+
+  mat-card {
+    box-sizing: border-box;
+    // width: 100wh;
+    // height: 100%;
+    text-align: center;
+    overflow-y: auto;
+  }
+}

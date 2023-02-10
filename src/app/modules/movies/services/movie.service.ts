@@ -8,7 +8,7 @@ import {
   shareReplay,
   switchMap,
 } from 'rxjs';
-import { MovieResponse, Movie } from '@movies/models';
+import { MovieResponse, Search, Movie } from '@movies/models';
 import { NumberInput } from '@angular/cdk/coercion';
 
 import {
@@ -22,7 +22,7 @@ import {
 })
 export class MovieService {
   private searchTermBS: BehaviorSubject<String> = new BehaviorSubject<String>(
-    ''
+    'super'
   );
   private actualPageBS: BehaviorSubject<number> = new BehaviorSubject<number>(
     0
@@ -45,9 +45,9 @@ export class MovieService {
     );
   }
 
-  get listMovies$(): Observable<Movie[]> {
+  get listMovies$(): Observable<Search[]> {
     return this.moviesResponse$.pipe(
-      map<MovieResponse, Movie[]>(({ Search }: MovieResponse) =>
+      map<MovieResponse, Search[]>(({ Search }: MovieResponse) =>
         Search !== undefined ? Search : []
       )
     );
@@ -77,5 +77,10 @@ export class MovieService {
     const term = searchTerm || DEFAULT_SEARCH_TERM;
 
     return `${API_URL_BASE}?apikey=${API_KEY}&page=${actualPage + 1}&s=${term}`;
+  }
+
+  getMovieId(id: string): Observable<Movie> {
+    const url = `${API_URL_BASE}?apikey=${API_KEY}&i=${id}&plot=full`;
+    return this.http.get<Movie>(url);
   }
 }

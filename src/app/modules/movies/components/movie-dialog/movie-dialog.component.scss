@@ -1,0 +1,56 @@
+:host {
+  overflow-y: auto;
+
+  mat-card {
+    mat-card-header {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      margin-bottom: 10px;
+    }
+    mat-card-content {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-gap: 0.5rem;
+      place-content: center;
+      place-items: center;
+
+      article {
+        text-align: justify;
+        font-weight: 200;
+        font-family: "Mono";
+      }
+
+      img: {
+        z-index: 1;
+        width: calc(100%);
+        height: calc(100%);
+        // object-fit: cover;
+      }
+
+      section {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 1rem;
+        justify-content: flex-start;
+      }
+    }
+
+    mat-card-actions {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    mat-card {
+      mat-card-content {
+        grid-template-columns: 1fr 2fr;
+        place-content: center;
+        place-items: start;
+      }
+    }
+  }
+}

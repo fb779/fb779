@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Movie } from '@movies/models';
+import { Search } from '@movies/models';
 
 @Component({
   selector: 'app-movie-list',
@@ -9,5 +9,5 @@ import { Movie } from '@movies/models';
 export class MovieListComponent {
   // HACK: I don't understan why i must to include the null definition on the input?
   // @Input('movies') movies!: Movie[];
-  @Input('movies') movies: Movie[] = [];
+  @Input('movies') movies: Search[] = [];
 }
