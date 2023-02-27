@@ -1,0 +1,7 @@
+<ng-container *ngIf="listHeroes$ | async as list">
+  <app-hero-list [list]="list" (action)="openHero($event)"></app-hero-list>
+</ng-container>
+
+<ng-container *ngIf="hero$ | async as hero">
+  <app-hero-card [hero]="hero"></app-hero-card>
+</ng-container>

@@ -1,0 +1,36 @@
+:host {
+  --backgroud-color: #275fa3;
+  --font-color-primary: #f2f2f2;
+  --font-color-secondary: #cfcfcf;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  mat-card {
+    .header-avatar {
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    mat-card-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    img {
+      max-inline-size: 100%;
+      width: 100%;
+      block-size: auto;
+      aspect-ratio: 2/1;
+      object-fit: contain;
+      margin: auto;
+    }
+  }
+}
