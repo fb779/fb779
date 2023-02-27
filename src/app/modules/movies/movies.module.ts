@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@material/material.module';
+import { PipesModule } from '@app/pipes/pipes.module';
 import { MoviesRoutingModule } from './movies-routing.module';
-
-import { NoImagenPipe } from '@app/pipes';
 
 import { MoviesComponent } from './movies.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
@@ -20,7 +19,6 @@ import { MovieDialogComponent } from './components/movie-dialog/movie-dialog.com
     MovieSearchComponent,
     MovieListComponent,
     MoviePaginationComponent,
-    NoImagenPipe,
     MovieDialogComponent,
   ],
   imports: [
@@ -29,6 +27,7 @@ import { MovieDialogComponent } from './components/movie-dialog/movie-dialog.com
     ReactiveFormsModule,
     MoviesRoutingModule,
     MaterialModule,
+    PipesModule,
   ],
 })
 export class MoviesModule {}
