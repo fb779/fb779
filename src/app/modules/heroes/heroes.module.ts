@@ -10,7 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { PipesModule } from '@app/pipes/pipes.module';
-// import { HeroFormComponent } from './components/hero-form/hero-form.component';
+import { HeroFormComponent } from './components/hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,7 @@ import { PipesModule } from '@app/pipes/pipes.module';
     HeaderComponent,
     HeroCardComponent,
     HeroListComponent,
-    // HeroFormComponent,
+    HeroFormComponent,
   ],
   imports: [
     CommonModule,
