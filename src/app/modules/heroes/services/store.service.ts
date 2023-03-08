@@ -7,11 +7,11 @@ export class StoreService {
   constructor() {}
 
   public saveData(key: string, data: Object) {
-    localStorage.setItem(key, JSON.stringify(data));
+    localStorage.setItem(key, btoa(JSON.stringify(data)));
   }
 
   public getData(key: string) {
-    return localStorage.getItem(key);
+    return JSON.parse(btoa(localStorage.getItem(key) || '[]'));
   }
   public removeData(key: string) {
     localStorage.removeItem(key);

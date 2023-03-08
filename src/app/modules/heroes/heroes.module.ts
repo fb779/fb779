@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '@material/material.module';
 
 import { HeroesRoutingModule } from './heroes-routing.module';
@@ -9,6 +10,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { PipesModule } from '@app/pipes/pipes.module';
+// import { HeroFormComponent } from './components/hero-form/hero-form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,15 @@ import { PipesModule } from '@app/pipes/pipes.module';
     HeaderComponent,
     HeroCardComponent,
     HeroListComponent,
+    // HeroFormComponent,
   ],
-  imports: [CommonModule, MaterialModule, HeroesRoutingModule, PipesModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+    HeroesRoutingModule,
+    PipesModule,
+  ],
 })
 export class HeroesModule {}

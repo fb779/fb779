@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 import { HeroeService } from '../../services/heroe.service';
 import { Hero, Actions, ActionEmit } from '../../models/hero';
-import { Action } from 'rxjs/internal/scheduler/Action';
+// import { HeroFormComponent } from '../hero-form/hero-form.component';
 
 @Component({
   selector: 'app-home',
@@ -14,22 +15,22 @@ export class HomeComponent implements OnInit {
 
   hero$: Observable<Hero | null> = this.heroService.hero$;
 
-  constructor(private heroService: HeroeService) {}
+  constructor(private heroService: HeroeService, public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
-  openHero(data: ActionEmit) {
-    console.log(data);
+  actionHero(data: ActionEmit) {
+    // console.log(data);
     switch (data.action) {
       case Actions.open:
         {
-          this.heroService.heroChosing = data.hero;
+          this.openHero(data.hero);
         }
         break;
 
       // case Actions.edit:
       //   {
-      //     this.heroService.heroChosing = data.hero;
+      //     this.editHero(data);
       //   }
       //   break;
 
@@ -38,4 +39,34 @@ export class HomeComponent implements OnInit {
       // }
     }
   }
+
+  private openHero(hero: Hero) {
+    this.heroService.heroChosing = hero;
+  }
+
+  // private openHeroForm() {
+  //   const dialogRef = this.dialog.open(HeroFormComponent, {
+  //     width: '90%',
+  //     height: '80%',
+  //     data: {},
+  //   });
+
+  //   // dialogRef.afterClosed().subscribe((result) => {
+  //   //   console.log('The dialog was closed');
+  //   //   // this.animal = result;
+  //   // });
+  // }
+
+  // private editHero(actionData: ActionEmit) {
+  //   const dialogRef = this.dialog.open(HeroFormComponent, {
+  //     // width: '250px',
+  //     height: '90%',
+  //     data: { ...actionData },
+  //   });
+
+  //   // dialogRef.afterClosed().subscribe((result) => {
+  //   //   console.log('The dialog was closed');
+  //   //   // this.animal = result;
+  //   // });
+  // }
 }

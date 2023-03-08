@@ -7,18 +7,18 @@ import { Hero, Actions, ActionEmit } from '../../models/hero';
   styleUrls: ['./hero-list.component.scss'],
 })
 export class HeroListComponent implements OnInit {
-  @Input('list') listHeroes: Hero[] = [];
+  @Input('list') listHeroes!: Hero[];
   @Output() action: EventEmitter<ActionEmit> = new EventEmitter();
 
   actions = Actions;
 
-  displayedColumns: string[] = ['id', 'name', 'race', 'actions'];
+  displayedColumns: string[] = ['name', 'race', 'actions'];
 
   constructor() {}
 
   ngOnInit(): void {}
 
-  emitAction(action: Actions, hero: Hero) {
+  emitAction(action: Actions, hero: Hero): void {
     this.action.emit({ action, hero });
   }
 }

@@ -5,6 +5,7 @@ export interface ActionEmit {
 
 export enum Actions {
   open = 'open',
+  new = 'new',
   edit = 'edit',
   delete = 'delete',
 }
@@ -16,8 +17,8 @@ export enum Gender {
 }
 
 export enum Alignment {
-  Bad = 'bad',
   Empty = '-',
+  Bad = 'bad',
   Good = 'good',
   Neutral = 'neutral',
 }
@@ -35,8 +36,7 @@ export interface Hero {
 }
 
 export interface Appearance {
-  gender: string;
-  // gender: Gender;
+  gender: Gender;
   race: null | string;
   height: string[];
   weight: string[];
@@ -51,8 +51,7 @@ export interface Biography {
   placeOfBirth: string;
   firstAppearance: string;
   publisher: null | string;
-  alignment: string;
-  // alignment: Alignment;
+  alignment: Alignment;
 }
 
 export interface Connections {

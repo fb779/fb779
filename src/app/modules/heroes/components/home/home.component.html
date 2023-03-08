@@ -1,5 +1,5 @@
 <ng-container *ngIf="listHeroes$ | async as list">
-  <app-hero-list [list]="list" (action)="openHero($event)"></app-hero-list>
+  <app-hero-list [list]="list" (action)="actionHero($event)"></app-hero-list>
 </ng-container>
 
 <ng-container *ngIf="hero$ | async as hero">
