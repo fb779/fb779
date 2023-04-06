@@ -1,4 +1,10 @@
-import { Hero } from './hero';
+import { Hero, Actions, Gender, Alignment } from './hero';
+
+export const actionList: string[] = Object.keys(Actions);
+
+export const genderList: string[] = Object.keys(Gender);
+
+export const alignmentList: string[] = Object.keys(Alignment);
 
 export const DATA_LIST: Hero[] = [];
 // export const DATA_LIST: Hero[] = [

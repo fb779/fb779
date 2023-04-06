@@ -1,6 +1,6 @@
 export interface ActionEmit {
   action: Actions;
-  hero: Hero;
+  hero: Hero | null;
 }
 
 export enum Actions {

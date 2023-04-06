@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { HeroeService } from '../../services/heroe.service';
 import { Hero, Actions, ActionEmit } from '../../models/hero';
-// import { HeroFormComponent } from '../hero-form/hero-form.component';
+import { HeroFormComponent } from '../hero-form/hero-form.component';
 
 @Component({
   selector: 'app-home',
@@ -20,19 +20,25 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {}
 
   actionHero(data: ActionEmit) {
-    // console.log(data);
+    console.log(data);
     switch (data.action) {
       case Actions.open:
         {
-          this.openHero(data.hero);
+          this.showHero(data.hero);
         }
         break;
 
-      // case Actions.edit:
-      //   {
-      //     this.editHero(data);
-      //   }
-      //   break;
+      case Actions.new:
+        {
+          this.openHeroForm(data);
+        }
+        break;
+
+      case Actions.edit:
+        {
+          this.openHeroForm(data);
+        }
+        break;
 
       // case Actions.delete: {
       //   this.heroService.heroChosing = data.hero;
@@ -40,33 +46,20 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  private openHero(hero: Hero) {
+  private showHero(hero: Hero | null) {
     this.heroService.heroChosing = hero;
   }
 
-  // private openHeroForm() {
-  //   const dialogRef = this.dialog.open(HeroFormComponent, {
-  //     width: '90%',
-  //     height: '80%',
-  //     data: {},
-  //   });
+  private openHeroForm(actionData: ActionEmit) {
+    const dialogRef = this.dialog.open(HeroFormComponent, {
+      width: '95%',
+      height: '90%',
+      data: { ...actionData },
+    });
 
-  //   // dialogRef.afterClosed().subscribe((result) => {
-  //   //   console.log('The dialog was closed');
-  //   //   // this.animal = result;
-  //   // });
-  // }
-
-  // private editHero(actionData: ActionEmit) {
-  //   const dialogRef = this.dialog.open(HeroFormComponent, {
-  //     // width: '250px',
-  //     height: '90%',
-  //     data: { ...actionData },
-  //   });
-
-  //   // dialogRef.afterClosed().subscribe((result) => {
-  //   //   console.log('The dialog was closed');
-  //   //   // this.animal = result;
-  //   // });
-  // }
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   console.log('The dialog was closed');
+    //   // this.animal = result;
+    // });
+  }
 }

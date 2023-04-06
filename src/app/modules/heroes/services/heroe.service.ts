@@ -19,8 +19,8 @@ export class HeroeService {
     return this.heroBS.asObservable();
   }
 
-  set heroChosing(hero: Hero) {
-    this.heroBS.next(hero);
+  set heroChosing(hero: Hero | null) {
+    hero && this.heroBS.next(hero);
   }
 
   get listHeroes$(): Observable<Hero[]> {
@@ -32,15 +32,6 @@ export class HeroeService {
       .pipe(
         // tap((data) => this.storeService.saveData('heroes', data)),
         // tap((data) => console.log('data cargada', data)),
-        // map((data) => {
-        //   console.log(data);
-        //   return data.map((hero) => {
-        //     hero.appearance.height = hero.appearance.height[1];
-        //     hero.appearance.weight = hero.appearance.weight[1];
-        //     if (hero.id == 1) console.log(hero);
-        //     return hero;
-        //   });
-        // }),
         tap((data) => this.listBS.next(data))
       )
       .subscribe();

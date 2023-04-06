@@ -18,7 +18,7 @@ export class HeroListComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  emitAction(action: Actions, hero: Hero): void {
+  emitAction(action: Actions, hero: Hero | null = null): void {
     this.action.emit({ action, hero });
   }
 }
