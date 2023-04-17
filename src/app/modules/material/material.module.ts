@@ -14,6 +14,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 const MATERIAL_MODULES = [
@@ -30,6 +31,7 @@ const MATERIAL_MODULES = [
   MatSelectModule,
   MatSortModule,
   MatTableModule,
+  MatTabsModule,
   MatToolbarModule,
 ];
 
@@ -38,4 +40,4 @@ const MATERIAL_MODULES = [
   imports: [CommonModule, MATERIAL_MODULES],
   exports: [MATERIAL_MODULES],
 })
-export class MaterialModule {}
+export class MaterialModule { }
