@@ -4,19 +4,24 @@
   --font-color-secondary: #cfcfcf;
 
   box-sizing: border-box;
+  border: solid 1px red;
   width: 100%;
   height: 100%;
   overflow: auto;
 
   mat-card {
+    box-sizing: border-box;
+    height: 100%;
     .header-avatar {
       overflow: hidden;
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
     }
+
     mat-card-actions {
       display: flex;
       justify-content: center;

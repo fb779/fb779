@@ -1,19 +1,37 @@
 <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="header-avatar">
-      <img mat-card-image [src]="hero.images.lg | noimagen" [alt]="hero.name">
+      <img mat-card-image [src]="hero.images.lg | noimagen" [alt]="hero.name" />
     </div>
-    <mat-card-title>{{hero.name}}</mat-card-title>
-    <mat-card-subtitle>{{ hero.biography.fullName || 'NA' }}</mat-card-subtitle>
+    <mat-card-title>{{ hero.name }}</mat-card-title>
+    <mat-card-subtitle>{{ hero.biography.fullName || "NA" }}</mat-card-subtitle>
   </mat-card-header>
-  <img mat-card-image [src]="hero.images.lg | noimagen" [alt]="hero.name">
-  <mat-card-content>
-    <p>
-      {{ hero.biography | json }}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
+  <!-- <img mat-card-image [src]="hero.images.lg | noimagen" [alt]="hero.name"  /> -->
+
+  <mat-tab-group mat-align-tabs="center" mat-stretch-tabs>
+    <mat-tab label="Identification">
+      <pre> {{ hero.appearance | json }} </pre>
+      <pre> {{ hero.powerstats | json }} </pre>
+    </mat-tab>
+    <mat-tab label="Information">
+      <pre> {{ hero.biography | json }} </pre>
+      <pre> {{ hero.work | json }} </pre>
+      <pre> {{ hero.connections | json }} </pre>
+    </mat-tab>
+    <!-- <mat-tab label="Images" class="box-imgs">
+        <!-- <pre> {{ hero.images | json }} </pre> -- >
+        <img mat-card-image [src]="hero.images.lg | noimagen" [alt]="hero.name"  />
+        <img mat-card-image [src]="hero.images.md | noimagen" [alt]="hero.name"  />
+        <img mat-card-image [src]="hero.images.sm | noimagen" [alt]="hero.name"  />
+        <img mat-card-image [src]="hero.images.xs | noimagen" [alt]="hero.name"  />
+    </mat-tab> -->
+  </mat-tab-group>
+
+  <!-- <mat-card-content>
+    <pre> {{ hero | json }} </pre>
+    </mat-card-content> -->
+  <!-- <mat-card-actions>
+<button mat-button>LIKE</button>
+<button mat-button>SHARE</button>
+</mat-card-actions> -->
 </mat-card>

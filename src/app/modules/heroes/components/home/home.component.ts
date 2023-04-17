@@ -15,9 +15,9 @@ export class HomeComponent implements OnInit {
 
   hero$: Observable<Hero | null> = this.heroService.hero$;
 
-  constructor(private heroService: HeroeService, public dialog: MatDialog) {}
+  constructor(private heroService: HeroeService, public dialog: MatDialog) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   actionHero(data: ActionEmit) {
     console.log(data);
@@ -29,11 +29,6 @@ export class HomeComponent implements OnInit {
         break;
 
       case Actions.new:
-        {
-          this.openHeroForm(data);
-        }
-        break;
-
       case Actions.edit:
         {
           this.openHeroForm(data);
@@ -54,7 +49,7 @@ export class HomeComponent implements OnInit {
     const dialogRef = this.dialog.open(HeroFormComponent, {
       width: '95%',
       height: '90%',
-      data: { ...actionData },
+      data: actionData,
     });
 
     // dialogRef.afterClosed().subscribe((result) => {
