@@ -14,9 +14,9 @@ export class HeroListComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'race', 'actions'];
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   emitAction(action: Actions, hero: Hero | null = null): void {
     this.action.emit({ action, hero });

@@ -1,56 +1,59 @@
-<ng-container>
-  <div class="">
-    <button mat-icon-button aria-label="edit" (click)="emitAction(actions.new)">
-      <mat-icon>add_circle</mat-icon>
-    </button>
-  </div>
+<table mat-table [dataSource]="listHeroes" class="mat-elevation-z8">
+  <!--- Note that these columns can be defined in any order. The actual rendered columns are set as a property on the row definition" -->
 
-  <table mat-table [dataSource]="listHeroes" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>Id.</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+  </ng-container>
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> Id. </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-    </ng-container>
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="race">
+    <th mat-header-cell *matHeaderCellDef>Race</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.appearance.race || "- N/A -" }}
+    </td>
+  </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
+  <!-- Weight Column -->
+  <!-- <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef> Weight </th>
+        <td mat-cell *matCellDef="let element"> {{element.appearance.weight[1]}} </td>
+      </ng-container> -->
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="race">
-      <th mat-header-cell *matHeaderCellDef> Race </th>
-      <td mat-cell *matCellDef="let element"> {{element.appearance.race || '- N/A -'}} </td>
-    </ng-container>
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let element">
+      <button
+        mat-icon-button
+        aria-label="open"
+        (click)="emitAction(actions.open, element)"
+      >
+        <mat-icon>preview</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        aria-label="edit"
+        (click)="emitAction(actions.edit, element)"
+      >
+        <mat-icon>edit_note</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        aria-label="delete"
+        (click)="emitAction(actions.delete, element)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
 
-    <!-- Weight Column -->
-    <!-- <ng-container matColumnDef="weight">
-      <th mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.appearance.weight[1]}} </td>
-    </ng-container> -->
-
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef> Actions </th>
-      <td mat-cell *matCellDef="let element">
-        <button mat-icon-button aria-label="open" (click)="emitAction(actions.open, element)">
-          <mat-icon>preview</mat-icon>
-        </button>
-        <button mat-icon-button aria-label="edit" (click)="emitAction(actions.edit, element)">
-          <mat-icon>edit_note</mat-icon>
-        </button>
-        <!-- <button mat-icon-button aria-label="delete" (click)="emitAction(actions.delete, element)">
-          <mat-icon>delete</mat-icon>
-        </button> -->
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef=" displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
-  </table>
-</ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>

@@ -1,0 +1,13 @@
+:host {
+  text-align: center;
+
+  mat-card {
+    mat-card-actions {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: stretch;
+      gap: 20px;
+    }
+  }
+}

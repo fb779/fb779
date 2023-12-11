@@ -6,6 +6,12 @@ export const genderList: string[] = Object.keys(Gender);
 
 export const alignmentList: string[] = Object.keys(Alignment);
 
+export const PAGINATION_CONFIG = {
+  PAGE: 0,
+  LIMIT: 10,
+  TERM: ""
+};
+
 export const DATA_LIST: Hero[] = [];
 // export const DATA_LIST: Hero[] = [
 //   {
@@ -433,7 +439,7 @@ export const DATA_LIST: Hero[] = [];
 //       combat: 95,
 //     },
 //     appearance: {
-//       gender: 'Male',
+//       gender: Gender.Male,
 //       race: null,
 //       height: ["6'3", '191 cm'],
 //       weight: ['230 lb', '104 kg'],
@@ -447,7 +453,7 @@ export const DATA_LIST: Hero[] = [];
 //       placeOfBirth: 'Unrevealed location in former East Germany',
 //       firstAppearance: '-',
 //       publisher: 'Marvel Comics',
-//       alignment: 'good',
+//       alignment: Alignment.Good,
 //     },
 //     work: {
 //       occupation: 'Mercenary, former government operative, freedom fighter',

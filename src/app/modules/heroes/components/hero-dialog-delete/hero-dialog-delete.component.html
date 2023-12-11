@@ -1,0 +1,22 @@
+<mat-card class="example-card">
+  <mat-card-title>Hero Delete</mat-card-title>
+  <mat-divider inset></mat-divider>
+  <mat-card-content>
+    <p>Are you sure to delete the hero:</p>
+    <p>
+      {{ data.name }}
+      <span *ngIf="data.biography.fullName">
+        {{ "- " + data.biography.fullName }}</span
+      >
+    </p>
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions>
+    <button mat-flat-button color="warn" (click)="dialogRef.close()">
+      Cancel
+    </button>
+    <button mat-flat-button color="primary" [mat-dialog-close]="true">
+      Yes
+    </button>
+  </mat-card-actions>
+</mat-card>

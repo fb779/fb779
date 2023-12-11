@@ -18,6 +18,8 @@ import { SecHeroBiographyComponent } from './components/sec-hero-biography/sec-h
 import { SecHeroConnectionsComponent } from './components/sec-hero-connections/sec-hero-connections.component';
 import { SecHeroImagesComponent } from './components/sec-hero-images/sec-hero-images.component';
 import { SecHeroWorkComponent } from './components/sec-hero-work/sec-hero-work.component';
+import { HeroDialogDeleteComponent } from './components/hero-dialog-delete/hero-dialog-delete.component';
+import { HeroCreateComponent } from './components/hero-create/hero-create.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { SecHeroWorkComponent } from './components/sec-hero-work/sec-hero-work.c
     SecHeroConnectionsComponent,
     SecHeroImagesComponent,
     SecHeroWorkComponent,
+    HeroDialogDeleteComponent,
+    HeroCreateComponent,
   ],
   imports: [
     CommonModule,

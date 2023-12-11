@@ -1,34 +1,41 @@
 :host {
   background-color: #f2f2f2;
-  width: 100%;
   box-sizing: border-box;
   height: calc(100% - 64px);
-  padding: 1rem;
   overflow: hidden;
+  padding: 1rem;
+  width: 100%;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: "list form";
-  gap: 1rem;
+  grid-template-areas:
+    "create form"
+    "list form";
+  gap: 0.5rem;
   place-content: start;
   place-items: start;
 
-  app-list {
+  app-hero-create {
+    grid-area: create;
+  }
+
+  app-hero-list {
     grid-area: list;
   }
 
-  app-form {
+  app-hero-card {
     grid-area: form;
   }
 
   @media screen and (max-width: 600px) {
-    min-width: 300px;
+    min-width: 400px;
     height: calc(100% - 56px);
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 1fr;
     grid-template-areas:
-      "form"
-      "list";
+      "create"
+      "list"
+      "form";
   }
 }

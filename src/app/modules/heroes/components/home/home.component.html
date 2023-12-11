@@ -1,4 +1,6 @@
-<ng-container *ngIf="listHeroes$ | async as list">
+<app-hero-create (action)="actionHero($event)"></app-hero-create>
+
+<ng-container class="list" *ngIf="listHeroes$ | async as list">
   <app-hero-list [list]="list" (action)="actionHero($event)"></app-hero-list>
 </ng-container>
 
